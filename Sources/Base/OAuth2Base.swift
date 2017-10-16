@@ -468,12 +468,11 @@ open class OAuth2ContextStore {
 	/**
 	The state sent to the server when requesting a token.
 	
-	We internally generate a UUID and use the first 8 chars if `_state` is empty.
+	We internally generate a UUID if `_state` is empty.
 	*/
 	open var state: String {
 		if _state.isEmpty {
 			_state = UUID().uuidString
-			_state = String(_state[_state.startIndex..<_state.index(_state.startIndex, offsetBy: 8)])        // only use the first 8 chars, should be enough
 		}
 		return _state
 	}
