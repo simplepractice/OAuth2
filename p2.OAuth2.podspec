@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "p2.OAuth2"
-  s.version      = "3.0.3"
+  s.version      = "4.0.0"
   s.summary      = "OAuth2 framework for macOS, iOS and tvOS, written in Swift."
   s.description  = <<-DESC
                    OAuth2 frameworks for macOS, iOS and tvOS written in Swift.
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.documentation_url = "http://p2.github.io/OAuth2/"
   s.license      = "Apache 2"
   s.author       = { "Pascal Pfiffner" => "phase.of.matter@gmail.com" }
-  s.source       = { :git => "https://github.com/p2/OAuth2.git", :tag => "#{s.version}", :submodules => true }
+  s.source       = { :git => "https://github.com/simplepractice/OAuth2.git", :tag => "#{s.version}", :submodules => true }
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
@@ -35,6 +35,5 @@ Pod::Spec.new do |s|
   s.osx.source_files = "Sources/macOS/*.swift"
   s.tvos.source_files = "Sources/tvOS/*.swift"
 
- #s.dependency "SwiftKeychain", "~> 1.0"
   s.ios.framework = "SafariServices"
 end
