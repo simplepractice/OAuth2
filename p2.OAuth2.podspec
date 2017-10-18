@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   }
 
   s.source       = {
-    :git => 'https://github.com/p2/OAuth2.git',
+    :git => 'https://github.com/simplepractice/OAuth2.git',
     :tag => s.version.to_s,
     :submodules => true
   }
