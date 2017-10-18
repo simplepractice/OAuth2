@@ -40,7 +40,8 @@ open class OAuth2CodeGrant: OAuth2 {
 	override open class var responseType: String? {
 		return "code"
 	}
-	
+
+	open var beforeHandlingCallback: (() -> Void)?
 	
 	// MARK: - Token Request
 	
@@ -77,6 +78,7 @@ open class OAuth2CodeGrant: OAuth2 {
 	override open func handleRedirectURL(_ redirect: URL) {
 		logger?.debug("OAuth2", msg: "Handling redirect URL \(redirect.description)")
 		do {
+			beforeHandlingCallback?()
 			let code = try validateRedirectURL(redirect)
 			exchangeCodeForToken(code)
 		}
