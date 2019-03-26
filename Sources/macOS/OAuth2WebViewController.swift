@@ -95,8 +95,8 @@ public class OAuth2WebViewController: NSViewController, WKNavigationDelegate, NS
 		progressIndicator.translatesAutoresizingMaskIntoConstraints = false
 		
 		view.addSubview(progressIndicator)
-		view.addConstraint(NSLayoutConstraint(item: progressIndicator, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
-		view.addConstraint(NSLayoutConstraint(item: progressIndicator, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0.0))
+		view.addConstraint(NSLayoutConstraint(item: progressIndicator as Any, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+		view.addConstraint(NSLayoutConstraint(item: progressIndicator as Any, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0.0))
 		
 		return view
 	}
@@ -126,10 +126,10 @@ public class OAuth2WebViewController: NSViewController, WKNavigationDelegate, NS
 		webView.alphaValue = 0.0
 		
 		view.addSubview(webView)
-		view.addConstraint(NSLayoutConstraint(item: webView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0))
-		view.addConstraint(NSLayoutConstraint(item: webView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: (willBecomeSheet ? -40.0 : 0.0)))
-		view.addConstraint(NSLayoutConstraint(item: webView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0))
-		view.addConstraint(NSLayoutConstraint(item: webView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: 0.0))
+		view.addConstraint(NSLayoutConstraint(item: webView as Any, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0))
+		view.addConstraint(NSLayoutConstraint(item: webView as Any, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: (willBecomeSheet ? -40.0 : 0.0)))
+		view.addConstraint(NSLayoutConstraint(item: webView as Any, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0))
+		view.addConstraint(NSLayoutConstraint(item: webView as Any, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: 0.0))
 		
 		// add a dismiss button
 		if willBecomeSheet {
